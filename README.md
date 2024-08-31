@@ -9,7 +9,7 @@
 --------------
 Event system
 --------------
-- event system just tells us user is doing something. it does not alon change anything.
+- the event system just tells us user is doing something. it does not alon change anything.
 
 
 ### Event System: 6 steps
@@ -18,7 +18,7 @@ Event system
 3. Name the function using the pattern of the ``handle + EventName``
 4. Pass the function as a prop to the plain element
 5. make sure we pass the function using a valid event name (onClick, onMouseOver,
-6. Make sure we pass a reference to the function(don't call it)
+6. Make sure we pass a reference to the function (don't call it)
 
 
 
@@ -28,18 +28,19 @@ Event system
 - onclick = a user clicks on something in the same page - button/ image / text/ dragging
 - onChange = a user types in a text input
 
-2. handle/ callback function means this function automatically calls by another piece of code.
+1. handle/ callback function means this function automatically calls by another piece of code.
 means someone going to call it.
 
-3. name is not requiring same way but it is a Community convention.
+2. name is not requiring same way, but it is a Community convention.
 
-4. plain elements = div/ button/ span and so on. we use the event system for a custom component as well.
+3. plain elements = div/ button/ span and so on.
+   we use the event system for a custom component as well.
 we pass it as a prop
 
-5. we need to pass this function in a valid event.
+4. we need to pass this function in a valid event.
 
-6. pass a reference to the function(don't call it). only the function name.
-- why we dont use() with the function. because it invoked the function without calling it. as soon as the component renders.
+5. pass a reference to the function (don't call it). only the function name.
+- why we don't use() with the function. because it invoked the function without calling it. as soon as the component renders.
 - how we can pass the function.
 onClick={handleClick}
 onClick={()=> {console.log('its click')}}
@@ -52,7 +53,8 @@ onClick={function()=> {console.log('its click')}}
 --------------
 ## State system
 --------------
-if we want to update something/ change something after user doing something. we need to use the state system.
+if we want to update something/ change something after user does something.
+we need to use the state system.
 we re-render the application when update is happened.
 
 useState: start with two parameters.
@@ -66,9 +68,9 @@ all the logic will be in the function that comes with the state.
 the variable `value` in the function `will be changed` every time event click/ happened.
 
 const [count, setCount] = useState(0);
-`count` value beginning was (0) then `one click` - it changed to (1) 2 clicks changed= count= 2
-
-useState(0)= means what value we want to show user when they will come to our app. like-  count: 0
+`count` value beginning was (0) then `one click` - it changed to (1) two clicks changed= count= 2
+useState(0)= means what value we want to show user when they will come to our app.
+like — count: 0
 the variable can be number, string, object, array
 
 most of the time we the variable state in the jsx.
@@ -88,7 +90,7 @@ array destructing = [count, setCount]
 ----------------
 1. Define a piece of state with the useState function
 2. Give a value to useState function. this is the default, starting value for our piece of state.
-3. use the state in some way in our component ( often in the return JSX)
+3. use the state in some way in our component (often in the return JSX)
 4. When a user does something, update the piece of the state. Causes React to render the component
 5. one thing update for one state.
 
