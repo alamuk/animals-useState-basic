@@ -1,4 +1,6 @@
-1. Event system =  how we detect a user doing something inside our app.
+# Event and State System in React  
+
+1. Event system = how we detect a user doing something inside our app.
  such as clicking on button/ dragging an element / typing and so on
 
 2. State System = how we somehow update the content on the screen.
@@ -7,11 +9,11 @@
 --------------
 Event system
 --------------
-event system just tells us user is doing something. it does not alon change anything.
+- event system just tells us user is doing something. it does not alon change anything.
 
 
-Event System: 6 steps
-1. decide what kind of event we want to want for.  ( Note: listing the event) (https://legacy.reactjs.org/docs/events.html)
+### Event System: 6 steps
+1. decide what kind of event we want to want for.  (Note: listing the event) (https://legacy.reactjs.org/docs/events.html)
 2. create a function. Usually called an event handler / callback function
 3. Name the function using the pattern of the ``handle + EventName``
 4. Pass the function as a prop to the plain element
@@ -20,16 +22,16 @@ Event System: 6 steps
 
 
 
-Note:
+#### Note:
 1. every time we do the specific event. its change the state.
- most important event we mostly used are:
+ the most important event we mostly used are:
 - onclick = a user clicks on something in the same page - button/ image / text/ dragging
 - onChange = a user types in a text input
 
 2. handle/ callback function means this function automatically calls by another piece of code.
 means someone going to call it.
 
-3. name is not require same way but it is a Community convention.
+3. name is not requiring same way but it is a Community convention.
 
 4. plain elements = div/ button/ span and so on. we use the event system for a custom component as well.
 we pass it as a prop
@@ -48,19 +50,19 @@ onClick={function()=> {console.log('its click')}}
 
 
 --------------
-State system
+## State system
 --------------
 if we want to update something/ change something after user doing something. we need to use the state system.
 we re-render the application when update is happened.
 
 useState: start with two parameters.
 1. variable
- a function - which updated variable values
+ a function—which updated variable values
 
-2. where will show the variable update- we can do that throw jsx return()
+2. where will show the variable update — we can do that throw jsx return()
 
 3. how it will be updated:
-all the logic will be in the function which comes with the state.
+all the logic will be in the function that comes with the state.
 the variable `value` in the function `will be changed` every time event click/ happened.
 
 const [count, setCount] = useState(0);
@@ -82,20 +84,22 @@ in setCount(count Value will be here) // setCount(35) so, count= 35
 array destructing = [count, setCount]
 
 
-State System: 4 steps
+## State System: 4 steps
 ----------------
 1. Define a piece of state with the useState function
 2. Give a value to useState function. this is the default, starting value for our piece of state.
 3. use the state in some way in our component ( often in the return JSX)
-4. When user does something, update the piece of the state. Causes React to render the component
+4. When a user does something, update the piece of the state. Causes React to render the component
 5. one thing update for one state.
 
 
 
 
 --------------
-Array:  destructuring;
+### Array:  destructuring;
 -----------
+```
+
 
  function makeArray() {
     return [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -121,19 +125,20 @@ Array:  destructuring;
 
     console.log(getRandomAnimals());
 
+```
 
--------------------------
-why we are not doing push(): because its modify the state. we never modify the state directly
+Why we are not doing push(): because its modify the state. 
+We never modify the state directly
  animals.push(getRandomAnimals()); // its modified piece of stat.
 
  setAnimals([...animals, getRandomAnimals()]);
 
 
 -----------
-map()
+### map()
 ----------
-it take the item from array one by one and create a new array box and put in that with structure.
-
+it takes the item from array one by one and creates a new array box and put in that with structure.
+``` 
 const renderAnimal = animals.map((animal, index) => {
     return <AnimalShow type={animal} key={index} />;
   });
@@ -147,7 +152,6 @@ const renderAnimal = animals.map((animal, index) => {
 
 
     // code //
--------------------------
 
 function App() {
   const [count, setCount] = useState(0);
@@ -167,4 +171,5 @@ function App() {
 }
 
 export default App;
---------------------------
+
+```
